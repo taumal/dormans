@@ -26,6 +26,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users','UserController');
     Route::resource('advances','AdvanceController');
     Route::resource('products','ProductController');
+    Route::resource('expenses','ExpenseController');
 
     Route::get('user/{id}', 'ShowProfile');
     Route::get('change-password', 'ChangePasswordController@index');

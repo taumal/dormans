@@ -226,6 +226,31 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item has-treeview {{ request()->is('expenses*') ? 'menu-open' : '' }}">
+                            <a href="#" class="nav-link {{ request()->is('expenses*') ? 'active' : '' }}">
+                                <i class="fas fa-money-check-alt"></i>
+                                <p>
+                                    Expense Management
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview ">
+                                @can('expense-create')
+                                <li class="nav-item">
+                                    <a href="{{ route('expenses.create') }}" class="nav-link {{ request()->is('expenses/create') ? 'active' : '' }}">
+                                        <i class="fas fa-file-invoice-dollar"></i>
+                                        <p>Expense Entry By Month</p>
+                                    </a>
+                                </li>
+                                @endcan
+                                <li class="nav-item">
+                                    <a href="{{ route('expenses.index') }}" class="nav-link {{ request()->is('expenses') ? 'active' : '' }}">
+                                        <i class="fas fa-file-invoice"></i>
+                                        <p>Expenses</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item has-treeview {{ request()->is('roles*') ? 'menu-open' : '' }}">
                             <a href="#" class="nav-link {{ request()->is('roles*') ? 'active' : '' }}">
                                 <i class="fas fa-chalkboard-teacher"></i>
