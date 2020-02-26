@@ -11,7 +11,7 @@ class Expenses extends Model
      */
     protected $fillable = [
 
-        'seat_rent', 'net_bill', 'electric_bill', 'water_bill', 'gas_bill', 'bua_bill', 'care_taker', 'extra_utility', 'current_date', 'month_name', 'year',
+        'seat_rent', 'net_bill', 'electric_bill', 'water_bill', 'gas_bill', 'bua_bill', 'care_taker', 'extra_utility', 'billing_date', 'due_date', 'current_month', 'year',
 
     ];
 }

@@ -21,10 +21,11 @@ class CreateExpensesTable extends Migration
             $table->integer('water_bill');
             $table->integer('gas_bill');
             $table->integer('bua_bill');
-            $table->integer('care_taker');
-            $table->integer('extra_utility');
-            $table->date('current_date');
-            $table->string('month_name');
+            $table->integer('care_taker')->nullable();
+            $table->integer('extra_utility')->nullable();
+            $table->date('billing_date');
+            $table->date('due_date');
+            $table->string('current_month');
             $table->integer('year');
             $table->timestamps();
         });

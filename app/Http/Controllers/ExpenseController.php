@@ -29,7 +29,7 @@ class ExpenseController extends Controller
     {
         $expenses = Expenses::latest()->paginate(10);
         return view('expenses.index',compact('expenses'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**
@@ -51,9 +51,11 @@ class ExpenseController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'name' => 'required',
-            'detail' => 'required',
+            'billing_date' => 'required|date',
+            'due_date' => 'sometimes|required|date|gte:billing_date',
         ]);
+
+        $request['seat_rent'] = $request->house_rent;
 
         Expenses::create($request->all());
 
