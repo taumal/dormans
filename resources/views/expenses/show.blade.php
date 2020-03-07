@@ -8,7 +8,7 @@
             </div>
 
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('expenses.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -17,14 +17,14 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                {{ $product->name }}
+                {{ $expense->billing_date }}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Details:</strong>
-                {{ $product->detail }}
+                {{ $expense->seat_rent }}
             </div>
         </div>
     </div>

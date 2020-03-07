@@ -33,21 +33,21 @@
                         <tr>
                             <th>No</th>
                             <th>Billing Date</th>
-                            <th>House Rent</th>
+                            <th>Total Expense</th>
                             <th width="280px">Action</th>
                         </tr>
                         @foreach ($expenses as $expense)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $expense->billing_date }}</td>
-                                <td>{{ $expense->seat_rent }}</td>
+                                <td>{{ $expense->seat_rent + $expense->electric_bill + $expense->water_bill + $expense->gas_bill + $expense->bua_bill }}</td>
                                 <td>
-                                    <a class="btn btn-info" href="{{ route('advances.show', $expense->id) }}">Show</a>
+                                    <a class="btn btn-info" href="{{ route('expenses.show', $expense->id) }}">Show</a>
                                     @can('expense-edit')
-                                    <a class="btn btn-primary" href="{{ route('advances.edit', $expense->id) }}">Edit</a>
+                                    <a class="btn btn-primary" href="{{ route('expenses.edit', $expense->id) }}">Edit</a>
                                     @endcan
                                     @can('expense-delete')
-                                    {!! Form::open(['method' => 'DELETE','route' => ['advances.destroy', $expense->id],'style'=>'display:inline']) !!}
+                                    {!! Form::open(['method' => 'DELETE','route' => ['expenses.destroy', $expense->id],'style'=>'display:inline']) !!}
                                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                                     {!! Form::close() !!}
                                     @endcan

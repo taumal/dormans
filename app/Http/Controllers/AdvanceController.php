@@ -121,7 +121,6 @@ class AdvanceController extends Controller
         $input['due_amount']    = $input['payable_amount'] - $input['deposit_amount'];
         $advance->update($input);
 
-//        $this->setTransaction($input, 'advance#'.$advance->id);
         TransactionHelpers::setTransaction($input, 'advance#'.$advance->id);
 
         return redirect()->route('advances.index')

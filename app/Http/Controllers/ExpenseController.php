@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Expenses;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -55,9 +56,11 @@ class ExpenseController extends Controller
             'due_date' => 'sometimes|required|date|gte:billing_date',
         ]);
 
-        $request['seat_rent'] = $request->house_rent;
+        $input = $request->all();
+        /*$date = Carbon::parse($request->billing_date);
+        $input['current_month'] = $date->format('F');*/
 
-        Expenses::create($request->all());
+        Expenses::create($input);
 
         return redirect()->route('expenses.index')
             ->with('success','Expenses created successfully.');
@@ -102,10 +105,18 @@ class ExpenseController extends Controller
             'detail' => 'required',
         ]);
 
-        $expense->update($request->all());
+        $input = $request->all();
+        $date = Carbon::parse($request->billing_date);
+        $input['current_month'] = $date->startOfMonth()->format('F');
+        $input['id'] = $expense->id;
+
+//        $expense = Expenses::find($id);
+        /*$expense->update($input);
 
         return redirect()->route('expenses.index')
-            ->with('success','Expenses updated successfully');
+            ->with('success','Expenses updated successfully');*/
+
+        dump($input);
     }
 
     /**
