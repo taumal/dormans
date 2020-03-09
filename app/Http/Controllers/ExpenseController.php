@@ -57,8 +57,9 @@ class ExpenseController extends Controller
         ]);
 
         $input = $request->all();
-        /*$date = Carbon::parse($request->billing_date);
-        $input['current_month'] = $date->format('F');*/
+        $date = Carbon::parse($request->billing_date);
+        $input['current_month'] = $date->format('F');
+        $input['year'] = $date->format('Y');
 
         Expenses::create($input);
 
@@ -101,22 +102,21 @@ class ExpenseController extends Controller
     public function update(Request $request, Expenses $expense)
     {
         request()->validate([
-            'name' => 'required',
-            'detail' => 'required',
+            'billing_date' => 'required|date',
+            'due_date' => 'sometimes|required|date|gte:billing_date',
         ]);
 
         $input = $request->all();
-        $date = Carbon::parse($request->billing_date);
-        $input['current_month'] = $date->startOfMonth()->format('F');
+        $cur_month = date('F', strtotime($request->billing_date));
+        $cur_year = date('Y', strtotime($request->billing_date));
+        $input['current_month'] = $cur_month;
+        $input['year'] = $cur_year;
         $input['id'] = $expense->id;
 
-//        $expense = Expenses::find($id);
-        /*$expense->update($input);
+        $expense->update($input);
 
         return redirect()->route('expenses.index')
-            ->with('success','Expenses updated successfully');*/
-
-        dump($input);
+            ->with('success','Expenses updated successfully');
     }
 
     /**

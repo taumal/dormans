@@ -51,7 +51,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label>House Rent:</label>
-                                {!! Form::text('house_rent', null, array('placeholder' => 'House Rent','class' => 'form-control')) !!}
+                                {!! Form::text('seat_rent', null, array('placeholder' => 'House Rent','class' => 'form-control')) !!}
                             </div>
                         </div>
                     </div>

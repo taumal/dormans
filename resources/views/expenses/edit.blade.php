@@ -1,17 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit Product</h2>
-            </div>
-
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('expenses.index') }}"> Back</a>
-            </div>
-        </div>
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">Month Wise Expense Update</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{{route('expenses.index')}}">Expenses</a></li>
+                        <li class="breadcrumb-item"><a href="{{url('/expenses/'.$expense->id.'/edit')}}">Edit</a></li>
+                        <li class="breadcrumb-item active">{{ date("F", strtotime($expense->billing_date)) }}</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
     </div>
+    <!-- /.content-header -->
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -24,33 +31,83 @@
         </div>
     @endif
 
-    <form action="{{ route('expenses.update',$expense->id) }}" method="POST">
-        @csrf
-        @method('PUT')
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Name:</strong>
-                    <input type="text" name="name" value="{{ $expense->seat_rent }}" class="form-control" placeholder="Name">
+    <div class="row">
+        <div class="col-md-12">
+            {!! Form::model($expense, ['route' => ['expenses.update', $expense->id],'method'=>'PATCH']) !!}
+            <div class="card card-primary">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Billing Date:</label>
+                                {!! Form::date('billing_date', null, array('placeholder' => 'Billing Date','class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Due Date:</label>
+                                {!! Form::date('due_date', null, array('placeholder' => 'Due Date','class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>House Rent:</label>
+                                {!! Form::text('seat_rent', null, array('placeholder' => 'House Rent','class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Electric Bill:</label>
+                                {!! Form::text('electric_bill', null, array('placeholder' => 'Electric Bill','class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Gas Bill:</label>
+                                {!! Form::text('gas_bill', null, array('placeholder' => 'Gas Bill','class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Water Bill:</label>
+                                {!! Form::text('water_bill', null, array('placeholder' => 'Water Bill','class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Net Bill:</label>
+                                {!! Form::text('net_bill', null, array('placeholder' => 'Internet Bill','class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Bua Bill:</label>
+                                {!! Form::text('bua_bill', null, array('placeholder' => 'Bua Bill','class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Care Taker:</label>
+                                {!! Form::text('care_taker', null, array('placeholder' => 'Care Taker Allowance','class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Extra Utility:</label>
+                                {!! Form::text('extra_utility', null, array('placeholder' => 'Extra Utility','class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Name:</strong>
-                    <input type="text" name="billing-date" value="{{ $expense->billing_date }}" class="form-control" placeholder="Name">
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Detail:</strong>
-                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $expense->gas_bill }}</textarea>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+            {!! Form::close() !!}
         </div>
-    </form>
+    </div>
 @endsection
