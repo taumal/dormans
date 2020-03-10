@@ -110,7 +110,7 @@
                             <div class="info-box bg-info">
                                 <div class="info-box-content">
                                     <span class="info-box-text text-center">Total</span>
-                                    <span class="info-box-number text-center mb-0">৳0</span>
+                                    <span class="info-box-number text-center mb-0">৳{{ $expense->total_bill ? $expense->total_bill : 0 }}</span>
                                 </div>
                             </div>
                         </div>

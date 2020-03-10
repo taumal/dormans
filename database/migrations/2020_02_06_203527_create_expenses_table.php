@@ -25,6 +25,7 @@ class CreateExpensesTable extends Migration
             $table->integer('extra_utility')->nullable();
             $table->date('billing_date');
             $table->date('due_date');
+            $table->integer('total_bill');
             $table->string('current_month');
             $table->integer('year');
             $table->timestamps();

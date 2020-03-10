@@ -58,6 +58,8 @@ class ExpenseController extends Controller
 
         $input = $request->all();
         $date = Carbon::parse($request->billing_date);
+        $input['total_bill'] = $input['seat_rent'] + $input['net_bill'] + $input['electric_bill'] + $input['water_bill']
+            + $input['gas_bill'] + $input['bua_bill'] + $input['care_taker'] + $input['extra_utility'];
         $input['current_month'] = $date->format('F');
         $input['year'] = $date->format('Y');
 
@@ -109,6 +111,8 @@ class ExpenseController extends Controller
         $input = $request->all();
         $cur_month = date('F', strtotime($request->billing_date));
         $cur_year = date('Y', strtotime($request->billing_date));
+        $input['total_bill'] = $input['seat_rent'] + $input['net_bill'] + $input['electric_bill'] + $input['water_bill']
+            + $input['gas_bill'] + $input['bua_bill'] + $input['care_taker'] + $input['extra_utility'];
         $input['current_month'] = $cur_month;
         $input['year'] = $cur_year;
         $input['id'] = $expense->id;

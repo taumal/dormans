@@ -40,7 +40,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $expense->billing_date }}</td>
-                                <td>৳{{ $expense->seat_rent + $expense->electric_bill + $expense->water_bill + $expense->gas_bill + $expense->bua_bill }}</td>
+                                <td>৳{{ $expense->total_bill ? $expense->total_bill : 0}}</td>
                                 <td>
                                     <a class="btn btn-info" href="{{ route('expenses.show', $expense->id) }}">Show</a>
                                     @can('expense-edit')

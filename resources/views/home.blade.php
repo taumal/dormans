@@ -43,11 +43,11 @@
     <!-- /.col -->
     <div class="col-12 col-sm-6 col-md-3">
         <div class="info-box mb-3">
-            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+            <span class="info-box-icon bg-danger elevation-1"><i class="far fa-calendar-alt"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Likes</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-text">Due Date</span>
+                <span class="info-box-number">{{ date('d F D, Y', strtotime($expense->due_date)) }}</span>
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -60,11 +60,11 @@
 
     <div class="col-12 col-sm-6 col-md-3">
         <div class="info-box mb-3">
-            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-file-invoice-dollar"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Sales</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-text">Total Expense( {{ $expense->current_month }} )</span>
+                <span class="info-box-number">৳{{ $expense->total_bill }}</span>
             </div>
             <!-- /.info-box-content -->
         </div>
