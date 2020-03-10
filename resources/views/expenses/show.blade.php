@@ -74,15 +74,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-4">
-                            <div class="info-box bg-light">
-                                <div class="info-box-content">
-                                    <span class="info-box-text text-center text-muted">Bua Bill</span>
-                                    <span class="info-box-number text-center text-muted mb-0">৳{{ $expense->bua_bill }}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-4">
+                        <div class="col-12 col-sm-3">
                             <div class="info-box bg-light">
                                 <div class="info-box-content">
                                     <span class="info-box-text text-center text-muted">Internet Bill</span>
@@ -90,7 +82,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-4">
+                        <div class="col-12 col-sm-3">
+                            <div class="info-box bg-light">
+                                <div class="info-box-content">
+                                    <span class="info-box-text text-center text-muted">Bua Bill</span>
+                                    <span class="info-box-number text-center text-muted mb-0">৳{{ $expense->bua_bill }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-3">
                             <div class="info-box bg-light">
                                 <div class="info-box-content">
                                     <span class="info-box-text text-center text-muted">Care Taker</span>
@@ -98,11 +98,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-12">
+                        <div class="col-12 col-sm-3">
                             <div class="info-box bg-light">
                                 <div class="info-box-content">
                                     <span class="info-box-text text-center text-muted">Extra Utility</span>
                                     <span class="info-box-number text-center text-muted mb-0">৳{{ $expense->extra_utility ? $expense->extra_utility : 0 }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12">
+                            <div class="info-box bg-info">
+                                <div class="info-box-content">
+                                    <span class="info-box-text text-center">Total</span>
+                                    <span class="info-box-number text-center mb-0">৳0</span>
                                 </div>
                             </div>
                         </div>

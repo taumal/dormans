@@ -39,19 +39,40 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label>Billing Date:</label>
-                                {!! Form::date('billing_date', null, array('placeholder' => 'Billing Date','class' => 'form-control')) !!}
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </span>
+                                    </div>
+                                    {!! Form::date('billing_date', null, array('placeholder' => 'Billing Date','class' => 'form-control')) !!}
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label>Due Date:</label>
-                                {!! Form::date('due_date', null, array('placeholder' => 'Due Date','class' => 'form-control')) !!}
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </span>
+                                    </div>
+                                    {!! Form::date('due_date', null, array('placeholder' => 'Due Date','class' => 'form-control')) !!}
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label>House Rent:</label>
-                                {!! Form::text('seat_rent', null, array('placeholder' => 'House Rent','class' => 'form-control')) !!}
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            ৳
+                                        </span>
+                                    </div>
+                                    {!! Form::text('seat_rent', null, array('placeholder' => 'House Rent','class' => 'form-control')) !!}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -59,25 +80,53 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label>Electric Bill:</label>
-                                {!! Form::text('electric_bill', null, array('placeholder' => 'Electric Bill','class' => 'form-control')) !!}
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            ৳
+                                        </span>
+                                    </div>
+                                    {!! Form::text('electric_bill', null, array('placeholder' => 'Electric Bill','class' => 'form-control')) !!}
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label>Gas Bill:</label>
-                                {!! Form::text('gas_bill', null, array('placeholder' => 'Gas Bill','class' => 'form-control')) !!}
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            ৳
+                                        </span>
+                                    </div>
+                                    {!! Form::text('gas_bill', null, array('placeholder' => 'Gas Bill','class' => 'form-control')) !!}
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label>Water Bill:</label>
-                                {!! Form::text('water_bill', null, array('placeholder' => 'Water Bill','class' => 'form-control')) !!}
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            ৳
+                                        </span>
+                                    </div>
+                                    {!! Form::text('water_bill', null, array('placeholder' => 'Water Bill','class' => 'form-control')) !!}
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label>Net Bill:</label>
-                                {!! Form::text('net_bill', null, array('placeholder' => 'Internet Bill','class' => 'form-control')) !!}
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            ৳
+                                        </span>
+                                    </div>
+                                    {!! Form::text('net_bill', null, array('placeholder' => 'Internet Bill','class' => 'form-control')) !!}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -85,19 +134,40 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label>Bua Bill:</label>
-                                {!! Form::text('bua_bill', null, array('placeholder' => 'Bua Bill','class' => 'form-control')) !!}
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            ৳
+                                        </span>
+                                    </div>
+                                    {!! Form::text('bua_bill', null, array('placeholder' => 'Bua Bill','class' => 'form-control')) !!}
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label>Care Taker:</label>
-                                {!! Form::text('care_taker', null, array('placeholder' => 'Care Taker Allowance','class' => 'form-control')) !!}
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            ৳
+                                        </span>
+                                    </div>
+                                    {!! Form::text('care_taker', null, array('placeholder' => 'Care Taker Allowance','class' => 'form-control')) !!}
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label>Extra Utility:</label>
-                                {!! Form::text('extra_utility', null, array('placeholder' => 'Extra Utility','class' => 'form-control')) !!}
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            ৳
+                                        </span>
+                                    </div>
+                                    {!! Form::text('extra_utility', null, array('placeholder' => 'Extra Utility','class' => 'form-control')) !!}
+                                </div>
                             </div>
                         </div>
                     </div>

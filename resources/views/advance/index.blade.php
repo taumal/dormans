@@ -42,7 +42,7 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $advance->user->name }}</td>
                             <td>{{ $advance->user->email }}</td>
-                            <td>{{ $advance->payable_amount }}</td>
+                            <td>৳{{ $advance->payable_amount }}</td>
                             <td>
                                 <a class="btn btn-info" href="{{ route('advances.show', $advance->id) }}">Show</a>
                                 <a class="btn btn-primary" href="{{ route('advances.edit', $advance->id) }}">Edit</a>

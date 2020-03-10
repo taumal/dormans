@@ -52,7 +52,14 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label>Payable:</label>
-                            {!! Form::text('payable_amount', null, array('placeholder' => 'Payable Amount','class' => 'form-control')) !!}
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        ৳
+                                    </span>
+                                </div>
+                                {!! Form::text('payable_amount', null, array('placeholder' => 'Payable Amount','class' => 'form-control')) !!}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,20 +67,41 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>Deposit Date:</label>
-                            {!! Form::text('deposit_date', null, array('placeholder' => 'Deposit Date','class' => 'form-control')) !!}
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="far fa-calendar-alt"></i>
+                                    </span>
+                                </div>
+                                {!! Form::date('deposit_date', null, array('placeholder' => 'Deposit Date','class' => 'form-control')) !!}
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>Deposit:</label>
-                            {!! Form::text('deposit_amount', null, array('placeholder' => 'Deposit','class' => 'form-control')) !!}
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        ৳
+                                    </span>
+                                </div>
+                                {!! Form::text('deposit_amount', null, array('placeholder' => 'Deposit Amount','class' => 'form-control')) !!}
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <!-- textarea -->
                         <div class="form-group">
                             <label>Due:</label>
-                            {!! Form::text('due_amount', null, array('placeholder' => 'Due','class' => 'form-control')) !!}
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        ৳
+                                    </span>
+                                </div>
+                                {!! Form::text('due_amount', null, array('placeholder' => 'Due Amount','class' => 'form-control')) !!}
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -53,7 +53,7 @@
                             <div class="info-box bg-light">
                                 <div class="info-box-content">
                                     <span class="info-box-text text-center text-muted">Payable Amount</span>
-                                    <span class="info-box-number text-center text-muted mb-0">{{ $advance->payable_amount }}</span>
+                                    <span class="info-box-number text-center text-muted mb-0">৳{{ $advance->payable_amount }}</span>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                             <div class="info-box bg-light">
                                 <div class="info-box-content">
                                     <span class="info-box-text text-center text-muted">Deposit</span>
-                                    <span class="info-box-number text-center text-muted mb-0">{{ $advance->deposit_amount }}</span>
+                                    <span class="info-box-number text-center text-muted mb-0">৳{{ $advance->deposit_amount }}</span>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                             <div class="info-box bg-light">
                                 <div class="info-box-content">
                                     <span class="info-box-text text-center text-danger">Due</span>
-                                    <span class="info-box-number text-center text-danger mb-0">{{ $advance->due_amount }}</span>
+                                    <span class="info-box-number text-center text-danger mb-0">৳{{ $advance->due_amount }}</span>
                                 </div>
                             </div>
                         </div>
