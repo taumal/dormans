@@ -47,7 +47,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Due Date</span>
-                <span class="info-box-number">{{ date('d F D, Y', strtotime($expense->due_date)) }}</span>
+                <span class="info-box-number">{{ !empty($expense->due_date) ? date('d F D, Y', strtotime($expense->due_date)) : "No Due Date" }} </span>
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -63,8 +63,8 @@
             <span class="info-box-icon bg-success elevation-1"><i class="fas fa-file-invoice-dollar"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Total Expense( {{ $expense->current_month }} )</span>
-                <span class="info-box-number">৳{{ $expense->total_bill }}</span>
+                <span class="info-box-text">Total Expense( {{ !empty($expense->current_month) ? $expense->current_month : 'N/A' }} )</span>
+                <span class="info-box-number">৳{{ !empty($expense->total_bill) ? $expense->total_bill : 0 }}</span>
             </div>
             <!-- /.info-box-content -->
         </div>
